@@ -85,10 +85,10 @@ public class AlunoServiceTest {
         Mockito.when(alunoRepository.findAll()).thenReturn(List.of(aluno1, aluno2));
 
         //Act
-        var alunoList = alunoRepository.findAll();
+        List<AlunoResponse> alunoList = alunoService.listarAlunos();
 
         //Assert
-        Assertions.assertThat(alunoList).doesNotContainNull();
+        Assertions.assertThat(alunoList).hasSize(2);
 
     }
 }
